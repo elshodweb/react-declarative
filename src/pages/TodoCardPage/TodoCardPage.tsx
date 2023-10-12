@@ -49,7 +49,7 @@ export const TodoCardPage = () => {
 
   return (
     <FetchView
-      state={async () => await fetchApi<ITodoItem[]>("/api/v1/todos")}
+      state={async () => await fetchApi<ITodoItem[]>("/users")}
       onLoadStart={() => setLoader(true)}
       onLoadEnd={() => setLoader(false)}
     >
@@ -60,7 +60,9 @@ export const TodoCardPage = () => {
           }}
           operations={operations}
           cardActions={actions}
-          handler={(search) => todos.filter((todo) => todo.title.includes(search))}
+          handler={(search) =>
+            todos.filter((todo) => todo.title.includes(search))
+          }
           onAction={handleAction}
           onCardClick={handleClick}
           onOperation={handleOperation}
@@ -71,3 +73,4 @@ export const TodoCardPage = () => {
 };
 
 export default TodoCardPage;
+

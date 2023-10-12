@@ -96,13 +96,10 @@ const heightRequest = () => window.innerHeight - 75;
 export const TodoListPage = () => {
   const { setLoader } = useLoader();
 
-  const handler = useArrayPaginator(
-    async () => await fetchApi("/api/v1/todos"),
-    {
-      onLoadStart: () => setLoader(true),
-      onLoadEnd: () => setLoader(false),
-    }
-  );
+  const handler = useArrayPaginator(async () => await fetchApi("/users"), {
+    onLoadStart: () => setLoader(true),
+    onLoadEnd: () => setLoader(false),
+  });
 
   const handleRowActionsClick = (action: string, row: any) => {
     alert(JSON.stringify({ row, action }, null, 2));
@@ -135,3 +132,4 @@ export const TodoListPage = () => {
 };
 
 export default TodoListPage;
+

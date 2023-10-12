@@ -56,9 +56,7 @@ const fields: TypedField[] = [
 ];
 
 export const TodoOnePage = ({ id }: ITodoOnePageProps) => {
-  const fetchState = () => [
-    fetchApi<ITodoItem>(`/api/v1/todos/${id}`)
-  ] as const;
+  const fetchState = () => [fetchApi<ITodoItem>(`/users/${id}`)] as const;
 
   const Content = (props: any) => {
     const { data, oneProps, beginSave } = usePreventLeave({
@@ -96,3 +94,4 @@ export const TodoOnePage = ({ id }: ITodoOnePageProps) => {
 };
 
 export default TodoOnePage;
+

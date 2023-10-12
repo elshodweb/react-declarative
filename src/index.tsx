@@ -22,7 +22,7 @@ import THEME_DARK from "./config/theme";
 import history, { handleGlobalError } from "./helpers/history";
 
 // if (isDevelopment()) {
-worker.start();
+// worker.start();
 // }
 
 const container = document.getElementById("root")!;

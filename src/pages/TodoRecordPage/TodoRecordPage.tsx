@@ -30,10 +30,10 @@ const updateFields: IField[] = [
 ];
 
 const cardActions: IActionTrigger[] = [
-    {
-        action: 'update-card',
-        label: 'Update todo',
-    },
+  {
+    action: "update-card",
+    label: "Update todo",
+  },
 ];
 
 export const TodoRecordPage = ({ id }: ITodoRecordPageProps) => {
@@ -51,7 +51,7 @@ export const TodoRecordPage = ({ id }: ITodoRecordPageProps) => {
   return (
     <>
       <FetchView
-        state={async () => await fetchApi<ITodoItem>(`/api/v1/todos/${id}`)}
+        state={async () => await fetchApi<ITodoItem>(`/users/${id}`)}
         onLoadStart={() => setLoader(true)}
         onLoadEnd={() => setLoader(false)}
       >
@@ -63,9 +63,9 @@ export const TodoRecordPage = ({ id }: ITodoRecordPageProps) => {
               onBack={() => history.push("/todos_card")}
             />
             <ActionTrigger
-                sx={{ mb: 1 }}
-                actions={cardActions}
-                onAction={pickData}
+              sx={{ mb: 1 }}
+              actions={cardActions}
+              onAction={pickData}
             />
             <RecordView data={todo} />
           </>
@@ -77,3 +77,4 @@ export const TodoRecordPage = ({ id }: ITodoRecordPageProps) => {
 };
 
 export default TodoRecordPage;
+

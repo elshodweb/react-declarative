@@ -36,6 +36,7 @@ const todos = [
 ];
 
 export default [
-  rest.get("/api/v1/todos", json(todos)),
-  ...todos.map((todo) => rest.get(`/api/v1/todos/${todo.id}`, json(todo))),
+  rest.get("/users", json(todos)),
+  ...todos.map((todo) => rest.get(`/users/${todo.id}`, json(todo))),
 ];
+
